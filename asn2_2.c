@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
     FILE* outputFile;int i;char s[50];
     char* filename;char* logname;
-	char usnme[20];
+	char usnme[20];char name[20];int j;
     	char pas[10];
     	time_t current_time;
 	char* c_time_string,test[]="",convert[50];
@@ -53,6 +53,8 @@ while((c=getopt(argc,argv,"l:f:")) !=-1) {
 	scanf("%s",usnme);
 	printf("Enter password not more than 10 characters\n");
 	scanf("%s",pas);
+	printf("Enter the Name without spaces\n");
+	scanf("%s",name);
 	if(i>0)
 	{
 		fclose(outputFile);
@@ -74,6 +76,8 @@ LOOP:   {
     fprintf(outputFile,usnme);
 	fprintf(outputFile,",");
 	fprintf(outputFile,pas);
+	fprintf(outputFile,",");
+	fprintf(outputFile,name);
 	fprintf(outputFile,"\n");
 
     	}
